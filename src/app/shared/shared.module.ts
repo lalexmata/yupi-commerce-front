@@ -4,19 +4,23 @@ import { MaterialModule } from './material/material.module';
 import { HeaderComponent } from './components/header/header.component';
 import { LayoutWebComponent } from './components/layout-web/layout-web.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { BootstrapModule } from './bootstrap/bootstrap.module';
+import { CarouselComponent } from './components/carousel/carousel.component';
 
 
 const modules = [
-  MaterialModule
+  MaterialModule,
+  BootstrapModule
 ]
 const components = [
   HeaderComponent,
   LayoutWebComponent,
-  FooterComponent
+  FooterComponent,
+  CarouselComponent
 ]
 
 @NgModule({
-  declarations: [ ...components],
+  declarations: [ ...components, CarouselComponent],
   imports: [
     CommonModule,
     ...modules
