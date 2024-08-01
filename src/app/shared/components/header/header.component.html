@@ -1,0 +1,45 @@
+<header class="header">
+
+  <h1 class="header__h1">
+      <a href="#" class="header__a">Logo</a>
+  </h1>
+
+  <button
+      (click)=" setActive() "
+      class="header__button">
+      <svg class="header__svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+      </svg>
+  </button>
+
+  <nav
+      class="header__nav"
+      [ngClass]="{ 'header__nav--activo' : active }">
+
+      <ul class="header__ul">
+          <li class="header__li"><a href="#" class="header__a">Inicio</a></li>
+          <li class="header__li"><a href="#" class="header__a">Productos</a></li>
+          <li class="header__li"><a href="#" class="header__a">Categorias</a></li>
+          <li class="header__li"><a href="#" class="header__a">Nosotros</a></li>
+          <li class="header__li"><a href="#" class="header__a">Contacto</a></li>
+          <li class="header__li">
+            <a href="#" class="header__a">
+              <button mat-button [matMenuTriggerFor]="menu" style="color: white;">
+                <mat-icon matListIcon class="mat-18" [title]="'Iniciar Sesión'">person</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item>Iniciar Sesión</button>
+                <button mat-menu-item>Registrarme</button>
+              </mat-menu>
+            </a>
+          </li>
+          <li class="header__li">
+            <button class="shoping-cart">
+              <svg class="header__svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  viewBox="0 0 16 16">
+                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+              </svg>
+            </button>
+          </li>
+      </ul>
+  </nav>
+</header>
