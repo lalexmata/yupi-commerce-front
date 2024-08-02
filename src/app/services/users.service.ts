@@ -1,16 +1,18 @@
 import { Injectable } from '@angular/core';
 import { UsersInterface } from '../shared/interfaces/users.interface';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsersService {
 
-  constructor() { }
+  constructor(
+    private httpClient: HttpClient
+  ) { }
 
-  take(cantidad: number){
-    return fetch(`https://fakestoreapi.com/users?limit=${cantidad}`)
-    .then(res=>res.json())
-    .then(json=>console.log(json))
+  take(cantidad: number): Observable<UsersInterface[]>{
+    return this.httpClient.get<UsersInterface[]>(`https://fakestoreapi.com/users?limit=${cantidad}`)
   }
 }

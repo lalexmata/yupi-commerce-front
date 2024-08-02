@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CarouselData } from '../../../shared/interfaces/carousel.interface';
 import { UsersService } from '../../../services/users.service';
+import { UsersInterface } from '../../../shared/interfaces/users.interface';
 
 @Component({
   selector: 'app-home',
@@ -23,7 +24,7 @@ export class HomeComponent implements OnInit{
     },
   ]
 
-  public usersList: any;
+  public usersList: UsersInterface[] = [];
 
   constructor(
     private userService: UsersService
@@ -31,12 +32,15 @@ export class HomeComponent implements OnInit{
 
   }
   ngOnInit(): void {
-    console.log('holis');
     this.obtenerUsuarios();
   }
 
 
-  obtenerUsuarios() {
-    this.usersList = this.userService.take(5);
+  obtenerUsuarios(): void {
+    this.userService.take(5).subscribe((resp) => {
+      if(resp){
+        this.usersList = resp;
+      }
+    });
   }
 }

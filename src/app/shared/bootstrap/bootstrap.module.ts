@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgbCarouselModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCarouselModule, NgbRatingModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 
 const modules = [
   NgbCarouselModule,
-  NgbTooltipModule
+  NgbTooltipModule,
+  NgbRatingModule,
+  
 ]
 
 @NgModule({
