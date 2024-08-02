@@ -6,6 +6,7 @@ import { LayoutWebComponent } from './components/layout-web/layout-web.component
 import { FooterComponent } from './components/footer/footer.component';
 import { BootstrapModule } from './bootstrap/bootstrap.module';
 import { CarouselComponent } from './components/carousel/carousel.component';
+import { RouterModule } from '@angular/router';
 
 
 const modules = [
@@ -23,6 +24,7 @@ const components = [
   declarations: [ ...components, CarouselComponent],
   imports: [
     CommonModule,
+    RouterModule,
     ...modules
   ],
   exports : [
